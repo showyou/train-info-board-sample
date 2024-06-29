@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電車掲示板</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .board {
+            background-color: #000;
+            color: #fff;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .board-header {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .board-header div {
+            font-size: 1.2em;
+        }
+        .time {
+            font-size: 2.5em;
+        }
+        .train-info {
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 0px;
+            background-color: #222;
+            border-radius: 5px;
+        }
+        .train-info div {
+            text-align: center;
+        }
+        .highlight {
+            background-color: #444;
+            border-radius: 5px;
+            margin-left: 0.5em;
+        }
+        .track {
+            font-size: 4em;
+            background-color: #fff;
+            color: #000;
+            border-radius: 5px;
+        }
+        .font-medium {
+            font-size: 1.5em;
+        }
+        .font-big {
+            font-size: 2em;
+        }
+        .font-large {
+            font-size: 3em;
+        }
+        .font-large2 {
+            font-size: 4em;
+        }
+        .font-large3 {
+            font-size: 5em;
+        }
+        .space-between {
+            display: flex;
+            justify-content: space-between;
+        }
+        .margin-less{
+            margin-top: 0px;
+        }
+        .current_time{
+            background-color: #fff;
+            color: #000;
+            text-align: right;
+        }
+        .font-right{
+            text-align: right;
+        }
+        .train-board-all{
+            background-color: #28d;
+        }
+        .footer{
+            background-color: #000;
+            color: white;
+            margin: 2px;
+        }
+    </style>
+    </head>
+<body>
+    <div class="container-fluid train-board-all">
+        <div class="row">
+            <div class="col-5 destination"><span class="font-large">大聖寺・福井 方面</span>
+                <br>for Daishoji, Fukui</div>
+            <div class="col-2 current_time">
+                <div class="small">現在時刻 Time</div>
+                <div class="font-large">8:17</div>
+            </div>
+            <div class="col-5 destination font-right"><span class="font-large">小松・金沢 方面</span>
+                <br>for Komatsu, Kanazawa</div>
+        
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="board">
+                    <div class="train-info">
+                        <div>
+                            <div class="row">
+                                <div class="col-4 highlight">
+                                    <div class="row font-large">普通</div>
+                                    <div class="row font-medium">Local</div> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="row">　</div>
+                                    <div class="row">for</div> 
+                                </div>
+                                <div class="col-5">
+                                    <div class="row font-large2">福　井</div>
+                                    <div class="row margin-less">Fukui</div> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="row font-medium"><br>行</div>
+                                    <div class="row"></div> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 font-large3">8:40</div>
+                                <div class="col-1 font-large2">4</div>
+                                <div class="col-2 font-medium">両 <br>Cars</div>
+                                <div class="col-2 font-medium">のりば<br>Track</div>
+                                <div class="col-2 track">2</div>    
+                            </div>
+                            <div class="row">
+                                <div class="col-12 font-medium">各駅に停車します。</div>
+                                </div>
+                            <div class="row">
+                                <div class="col-12 font-medium">Stops at all stations.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="train-info">
+                        <div>
+                            <div class="row">
+                                <div class="col-5 highlight">
+                                    <div class="row"><span class="font-large">普通</span>ワンマン</div>
+                                    <div class="row font-medium">Local</div> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="row">　</div>
+                                    <div class="row">for</div> 
+                                </div>
+                                <div class="col-4">
+                                    <div class="row font-large">福　井</div>
+                                    <div class="row margin-less">Fukui</div> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="row font-medium"><br>行</div>
+                                    <div class="row"></div> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 font-large3">9:21</div>
+                                <div class="col-1 font-large2">2</div>
+                                <div class="col-2 font-medium">両 <br>Cars</div>
+                                <div class="col-2 font-medium">のりば<br>Track</div>
+                                <div class="col-2 track">2</div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="board">
+                    <div class="train-info">
+                        <div>
+                            <div class="row">
+                                <div class="col-4 highlight">
+                                    <div class="row font-large">普通</div>
+                                    <div class="row font-medium">Local</div> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="row">　</div>
+                                    <div class="row">for</div> 
+                                </div>
+                                <div class="col-5">
+                                    <div class="row font-large2">金　沢</div>
+                                    <div class="row margin-less">Kanazawa</div> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="row font-medium"><br>行</div>
+                                    <div class="row"></div> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 font-large3">8:30</div>
+                                <div class="col-1 font-large2">4</div>
+                                <div class="col-2 font-medium">両 <br>Cars</div>
+                                <div class="col-2 font-medium">のりば<br>Track</div>
+                                <div class="col-2 track">3</div>    
+                            </div>
+                            <div class="row">
+                                <div class="col-12 font-medium">各駅に停車します。</div>
+                                </div>
+                            <div class="row">
+                                <div class="col-12 font-medium">Stops at all stations.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="train-info">
+                        <div>
+                            <div class="row">
+                                <div class="col-5 highlight">
+                                    <div class="row"><span class="font-large">普通</span>ワンマン</div>
+                                    <div class="row font-medium">Local</div> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="row">　</div>
+                                    <div class="row">for</div> 
+                                </div>
+                                <div class="col-4">
+                                    <div class="row font-large">金　沢</div>
+                                    <div class="row margin-less">Kanazawa</div> 
+                                </div>
+                                <div class="col-1">
+                                    <div class="row font-medium"><br>行</div>
+                                    <div class="row"></div> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 font-large3">8:54</div>
+                                <div class="col-1 font-large2">2</div>
+                                <div class="col-2 font-medium">両 <br>Cars</div>
+                                <div class="col-2 font-medium">のりば<br>Track</div>
+                                <div class="col-2 track">3</div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row train-info footer">
+            <div class="col-12 font-large">　　</div>
+        </div>
+    </div>
+</body>
+</html>
